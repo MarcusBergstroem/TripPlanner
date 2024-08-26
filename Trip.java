@@ -15,6 +15,10 @@ public class Trip {
         return country;
     }
 
+    public void setCountry(String newCountry){
+        country = newCountry;
+    }
+
     public int getDuration() {
         return duration;
     }

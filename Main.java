@@ -27,8 +27,13 @@ public class Main {
                     listTrips(allTrips);
                     break;
 
-                //Quit
+                //Edit trip
                 case 3:
+                    editTrip(console, allTrips);
+                    break;
+
+                //Quit
+                case 4:
                     sentinel = false;
                     break;
 
@@ -43,7 +48,8 @@ public class Main {
         System.out.println("Choose number:");
         System.out.println("1. Create trip");
         System.out.println("2. List trip(s)");
-        System.out.println("3. Quit");
+        System.out.println("3. Edit trip");
+        System.out.println("4. Quit");
     }
 
     public static void createTrip(ArrayList<Trip> allTrips, Scanner console){
@@ -100,7 +106,19 @@ public class Main {
 
     public static void listTrips(ArrayList<Trip> allTrips){
         for (Trip trip : allTrips) {
-            System.out.println(trip);
+            System.out.println(trip + "\n");
         }
+    }
+
+    public static void editTrip(Scanner console, ArrayList<Trip> allTrips){
+    
+        System.out.println("Choose trip number:");
+        int option = console.nextInt();
+        System.out.println();
+        console.nextLine();
+
+        System.out.println("Set new destination country:");
+        allTrips.get(option).setCountry(console.nextLine());
+
     }
 }
